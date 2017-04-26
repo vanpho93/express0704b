@@ -15,16 +15,18 @@ class PhepTinh {
             case 'tru': { 
                 pt = '-';
                 break;
-            }case 'nhan': { 
+            } 
+            case 'nhan': { 
                 pt = '*';
                 break;
-            }default: { 
+            } 
+            default: { 
                 pt = '/';
                 break;
             }
         }
         const veTrai = `${this.soA} ${pt} ${this.soB}`;
-        return `${veTrai} = ${ eval(veTrai) }`;
+        return `${veTrai} = ${eval(veTrai)}`;
     }
 }
 

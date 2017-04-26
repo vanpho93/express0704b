@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const parser = bodyParser.urlencoded({ extended: false });
-const PhepTinh = require('./PhepTinh');
 
 const app = express();
 app.listen(3000, () => console.log('SERVER START'));
