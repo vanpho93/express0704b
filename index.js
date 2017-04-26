@@ -15,3 +15,11 @@ app.post('/try', parser, (req, res) => {
     console.log(req.body);
     res.send('DA NHAN DU LIEU');
 });
+
+app.get('/tinh', (req, res) => {
+    res.render('tinh');
+});
+
+app.post('/xuly', parser, (req, res) => {
+    //TODO HERE
+});
