@@ -10,7 +10,12 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.static('public'));
 
-app.get('/', (req, res) => res.render('home'));
+app.get('/', (req, res, next) => {
+    req.a = 1000;
+    next();
+});
+
+app.get('/', (req, res) => res.render('home', { giatri: req.a }));
 
 app.post('/try', parser, (req, res) => {
     console.log(req.body);
@@ -23,6 +28,4 @@ app.get('/tinh', (req, res) => {
 
 app.post('/xuly', parser, require('./controller/xuly'));
 
-const { show } = require('./func');
-
-show(12345);
+app.get('*', (req, res) => res.redirect('/'));
